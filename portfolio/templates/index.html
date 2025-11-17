@@ -1,34 +1,78 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Arman's Portfolio</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
 
-    <header class="navbar">
-        <h1 class="logo">Arman's Portfolio</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Research</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+{% block title %}Home - Arman Research Portfolio{% endblock %}
 
-    <section class="hero">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Hi! I'm Arman — a passionate developer learning Django.</p>
-        <button id="clickMeBtn">Say Hello</button>
-    </section>
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
 
-    <footer>
-        <p>© 2025 Arman Hossain — All rights reserved.</p>
-    </footer>
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">Dr. Arman Researcher</h1>
+            <p class="hero-subtitle">Innovative Research & Academic Excellence</p>
+            <p class="hero-description">Passionate researcher dedicated to advancing knowledge through cutting-edge projects and impactful publications.</p>
+            <div class="hero-buttons">
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/Arman.jpeg' %}" alt="Dr. Arman Researcher">
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
 
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+<!-- Highlights Section -->
+<section class="highlights">
+    <div class="container">
+        <h2 class="section-title">Research Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <i class="fas fa-flask"></i>
+                <h3>Laboratory Research</h3>
+                <p>Advanced experimental studies in specialized research domains.</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analysis</h3>
+                <p>Statistical analysis and interpretation of complex datasets.</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-users"></i>
+                <h3>Collaborations</h3>
+                <p>International research partnerships and academic networks.</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-award"></i>
+                <h3>Achievements</h3>
+                <p>Recognized contributions to the scientific community.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Links Section -->
+<section class="quick-links">
+    <div class="container">
+        <h2 class="section-title">Explore My Work</h2>
+        <div class="links-grid">
+                <div class="link-content">
+                    <i class="fas fa-user"></i>
+                    <h3>About Me</h3>
+                    <p>Learn about my background and research interests</p>
+                </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
