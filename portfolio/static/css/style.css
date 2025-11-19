@@ -115,10 +115,10 @@ body {
     gap: 12px;
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    padding: 15px;
-    border-radius: 30px;
+    padding: 5px;
+    border-radius: 20px;
     box-shadow: var(--shadow-xl);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(168, 231, 9, 0.1);
 }
 
 [data-theme="light"] .theme-switcher {
@@ -1159,20 +1159,25 @@ main {
 
 /* Tablet (968px) */
 @media (max-width: 968px) {
+    /* Mobile Menu - 50% Width Only */
     .nav-menu {
         position: fixed;
         top: 80px;
         left: -100%;
-        width: 100%;
+        width: 50%; /* Changed from 100% to 50% */
+        height: calc(100vh - 80px);
         background: rgba(10, 10, 10, 0.98);
         backdrop-filter: blur(30px);
         flex-direction: column;
         padding: 2rem;
-        border-radius: 0;
+        border-radius: 0 20px 20px 0;
         border: none;
         box-shadow: var(--shadow-xl);
         transition: var(--transition-slow);
-        gap: 0;
+        gap: 1rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-y: auto;
     }
 
     [data-theme="light"] .nav-menu {
@@ -1188,10 +1193,16 @@ main {
     }
 
     .nav-link {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.5rem;
         border-radius: 15px;
-        margin-bottom: 0.5rem;
         justify-content: flex-start;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Hide CV Download Button on Mobile */
+    .cv-download-btn {
+        display: none; /* Hidden on mobile */
     }
 
     .nav-toggle {
@@ -1203,6 +1214,10 @@ main {
         gap: 2.5rem;
     }
     
+    .footer-social {
+        grid-column: 1 / -1;
+    }
+
     .social-links {
         grid-template-columns: repeat(6, 1fr);
         max-width: 100%;
@@ -1226,6 +1241,13 @@ main {
         font-size: 1.6rem;
     }
 
+    /* Mobile Menu - 50% Width */
+    .nav-menu {
+        width: 50%; /* 50% width maintained */
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
     .footer-main {
         padding: 3rem 0 2rem;
     }
@@ -1237,6 +1259,7 @@ main {
 
     .footer-achievements {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .footer-bottom .footer-container {
@@ -1265,6 +1288,18 @@ main {
         padding: 0 1rem;
     }
 
+    /* Mobile Menu - Adjust for small screens */
+    .nav-menu {
+        width: 70%; /* Slightly wider on very small screens */
+        padding: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
     .footer-container {
         padding: 0 1rem;
     }
@@ -1279,22 +1314,14 @@ main {
         height: 45px;
     }
     
-    .social-icon {
-        font-size: 1rem;
-    }
-    
-    .newsletter-form {
-        flex-direction: column;
-    }
-
     .theme-switcher {
         top: 70px;
         right: 5px;
     }
     
     .theme-btn {
-        width: 45px;
-        height: 45px;
+        width: 30%;
+        height: 30%;
         font-size: 1.1rem;
     }
 }

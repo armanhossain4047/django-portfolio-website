@@ -1,78 +1,552 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block title %}Home - Arman Research Portfolio{% endblock %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock %}
+{% block title %}Home - Arman Hossain | ML Researcher & Educator{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="hero">
+<!-- Hero Section Start -->
+<section class="hero" aria-label="Hero Section">
+    <div class="hero-background">
+        <div class="hero-shape shape-1"></div>
+        <div class="hero-shape shape-2"></div>
+        <div class="hero-shape shape-3"></div>
+        <div class="hero-pattern"></div>
+    </div>
     <div class="hero-content">
         <div class="hero-text">
-            <h1 class="hero-title">Dr. Arman Researcher</h1>
-            <p class="hero-subtitle">Innovative Research & Academic Excellence</p>
-            <p class="hero-description">Passionate researcher dedicated to advancing knowledge through cutting-edge projects and impactful publications.</p>
+            <div class="hero-badge">
+                <span>🚀 ML Researcher & AI Educator</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-gradient">Arman Hossain</span>
+            </h1>
+            <p class="hero-subtitle">Building the Future with <span class="typing-text" aria-live="polite"></span></p>
+            <p class="hero-description">
+                Undergraduate researcher specializing in <span class="highlight">Large Language Models</span>, 
+                <span class="highlight">Agricultural AI</span>, and <span class="highlight">Deep Learning</span> applications. 
+                Creator of <strong>"CSE Mastery by Arman"</strong> - Teaching CS & AI through YouTube.
+            </p>
+            
+            <!-- YouTube Stats in Hero -->
+            <div class="youtube-hero-stats">
+                <div class="youtube-stat">
+                    <div class="youtube-stat-number" data-target="852">0</div>
+                    <div class="youtube-stat-label">Subscribers</div>
+                </div>
+                <div class="youtube-stat">
+                    <div class="youtube-stat-number" data-target="227">0</div>
+                    <div class="youtube-stat-label">Videos</div>
+                </div>
+                <div class="youtube-stat">
+                    <div class="youtube-stat-number" data-target="66229">0</div>
+                    <div class="youtube-stat-label">Views</div>
+                </div>
+                <div class="youtube-stat">
+                    <div class="youtube-stat-date">Since Feb 2023</div>
+                </div>
+            </div>
+
             <div class="hero-buttons">
+                <a href="{% url 'projects' %}" class="btn btn-primary btn-glow">
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                    View Projects
+                </a>
+                <a href="{% url 'youtube' %}" class="btn btn-youtube-hero btn-glow">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    Visit Channel
+                </a>
+                <a href="{% url 'download_cv' %}" class="btn btn-accent btn-glow">
+                    <i class="fas fa-download" aria-hidden="true"></i>
+                    Download CV
+                </a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="{% static 'images/Arman.jpeg' %}" alt="Dr. Arman Researcher">
+            <div class="image-container">
+                <div class="image-frame"></div>
+                <img src="{% static 'images/Arman.jpeg' %}" alt="Arman Hossain - ML Researcher and Educator" class="profile-image" loading="lazy">
+                <div class="image-glow"></div>
+                <!-- YouTube Badge on Image -->
+                <div class="youtube-badge">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>CSE Mastery</span>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <div class="floating-element element-1">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                </div>
+                <div class="floating-element element-2">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                </div>
+                <div class="floating-element element-3">
+                    <i class="fas fa-code" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
     </div>
     <div class="scroll-indicator">
-        <span>Scroll Down</span>
-        <i class="fas fa-chevron-down"></i>
+        <div class="scroll-arrow"></div>
+        <span>Discover More</span>
     </div>
 </section>
+<!-- Hero Section End -->
 
-<!-- Highlights Section -->
-<section class="highlights">
+<!-- YouTube Channel Section Start -->
+<section class="youtube-section" aria-label="YouTube Channel Section">
+    <div class="section-background">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+        <div class="bg-shape shape-4"></div>
+        <div class="floating-play-btn">
+            <i class="fas fa-play" aria-hidden="true"></i>
+        </div>
+        <div class="floating-subscribers">
+            <i class="fas fa-users" aria-hidden="true"></i>
+        </div>
+        <div class="youtube-particles" id="youtubeParticles"></div>
+    </div>
+    
     <div class="container">
-        <h2 class="section-title">Research Highlights</h2>
-        <div class="highlights-grid">
-            <div class="highlight-card">
-                <i class="fas fa-flask"></i>
-                <h3>Laboratory Research</h3>
-                <p>Advanced experimental studies in specialized research domains.</p>
+        <!-- Animated Header -->
+        <div class="section-header">
+            <div class="youtube-icon-wrapper">
+                <div class="youtube-icon">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                </div>
+                <div class="icon-pulse"></div>
             </div>
-            <div class="highlight-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Analysis</h3>
-                <p>Statistical analysis and interpretation of complex datasets.</p>
+            <h3 class="section-title">
+                <span class="title-text">CSE Mastery by Arman</span>
+                <span class="title-underline"></span>
+            </h3>
+        </div>
+    
+        <!-- YouTube Content in Correct Order -->
+        <div class="youtube-content">
+            <!-- 1. Channel Description (FIRST) -->
+            <div class="channel-description">
+                <div class="description-card">
+                    <p>
+                        I created <strong>"CSE Mastery by Arman"</strong> to share my knowledge and passion for 
+                        Computer Science and Artificial Intelligence. The channel focuses on making complex 
+                        concepts accessible through detailed explanations and practical examples.
+                    </p>
+                    <div class="channel-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Detailed Code Explanations</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Real-world Projects</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>AI & ML Tutorials</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="highlight-card">
-                <i class="fas fa-users"></i>
-                <h3>Collaborations</h3>
-                <p>International research partnerships and academic networks.</p>
+    
+            <!-- 2. Stats Cards (SECOND - Now inside youtube-content) -->
+            <div class="youtube-stats">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">
+                            <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="200">0</h3>
+                        <p class="stat-label">Videos Uploaded</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="750">0</h3>
+                        <p class="stat-label">Subscribers</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">
+                            <i class="fas fa-list-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="30">0</h3>
+                        <p class="stat-label">Playlists</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="60"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper">
+                        <div class="stat-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <div class="icon-ring"></div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="50">0</h3>
+                        <p class="stat-label">Topics Covered</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
             </div>
-            <div class="highlight-card">
-                <i class="fas fa-award"></i>
-                <h3>Achievements</h3>
-                <p>Recognized contributions to the scientific community.</p>
+    
+            <!-- Playlists Showcase  -->
+            <div class="playlists-showcase">
+                <div class="showcase-header">
+                    <h3>Popular Playlists & Topics</h3>
+                    <div class="view-all">
+                        <a href="https://youtube.com/c/@CSEMasteryArman" target="_blank" rel="noopener noreferrer">
+                            View All Playlists
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="playlists-grid">
+                    <!-- Machine Learning -->
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <i class="fas fa-brain" aria-hidden="true"></i>
+                            </div>
+                            <div class="playlist-badge">
+                                <span>25+ Videos</span>
+                            </div>
+                        </div>
+                        <h4>Machine Learning</h4>
+                        <p>Complete ML concepts from basics to advanced</p>
+                        <div class="playlist-progress">
+                            <div class="progress-info">
+                                <span>Completion</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <a href="https://youtube.com/playlist?list=PLNyVY3q0NjiRp89BHgWPxaRN6oUjh5ncd&si=-MYMGNT1QYmPo1VV" target="_blank" rel="noopener noreferrer" class="watch-btn">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                Watch Now
+                            </a>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Artificial Intelligence -->
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <i class="fas fa-robot" aria-hidden="true"></i>
+                            </div>
+                            <div class="playlist-badge">
+                                <span>20+ Videos</span>
+                            </div>
+                        </div>
+                        <h4>AI</h4>
+                        <p>Artificial Intelligence, search algorithms</p>
+                        <div class="playlist-progress">
+                            <div class="progress-info">
+                                <span>Completion</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <a href="https://youtube.com/playlist?list=PLNyVY3q0NjiR5MCxdiXCyP2pWul7vYp0G&si=reURuxG5K3-O1SRt" target="_blank" rel="noopener noreferrer" class="watch-btn">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                Watch Now
+                            </a>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Data Structures -->
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <i class="fas fa-database" aria-hidden="true"></i>
+                            </div>
+                            <div class="playlist-badge">
+                                <span>30+ Videos</span>
+                            </div>
+                        </div>
+                        <h4>Data Mining</h4>
+                        <p>Dissimilarity Matrix, Cosine Similarity</p>
+                        <div class="playlist-progress">
+                            <div class="progress-info">
+                                <span>Completion</span>
+                                <span>20%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <a href="https://youtube.com/playlist?list=PLNyVY3q0NjiQmqbh7R6qud8G3OuK2Is6X&si=fWvI6qewZhamcRxc" target="_blank" rel="noopener noreferrer" class="watch-btn">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                Watch Now
+                            </a>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    
+                    <!-- Algorithms -->
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                            </div>
+                            <div class="playlist-badge">
+                                <span>35+ Videos</span>
+                            </div>
+                        </div>
+                        <h4>Web Programming</h4>
+                        <p>HTML, CSS, Javascript, Alart Prompt</p>
+                        <div class="playlist-progress">
+                            <div class="progress-info">
+                                <span>Completion</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <a href="https://youtube.com/playlist?list=PLNyVY3q0NjiTKkzFczy1axotPBKsJ4aY_&si=adT0FAudtTeb4voy" target="_blank" rel="noopener noreferrer" class="watch-btn">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                Watch Now
+                            </a>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                    <!-- Algorithms -->
+                    <div class="playlist-card">
+                        <div class="playlist-header">
+                            <div class="playlist-icon">
+                                <i class="fas fa-user-shield" aria-hidden="true"></i>
+                            </div>
+                            <div class="playlist-badge">
+                                <span>35+ Videos</span>
+                            </div>
+                        </div>
+                        <h4>Cyber Security</h4>
+                        <p>Man in the Middle Attack, SQL Injection Attack</p>
+                        <div class="playlist-progress">
+                            <div class="progress-info">
+                                <span>Completion</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="playlist-actions">
+                            <a href="https://youtube.com/playlist?list=PLNyVY3q0NjiRu-Mi5pDvhyyS7sEBOcY_y&si=wLlTiCXbb9NDUP3l" target="_blank" rel="noopener noreferrer" class="watch-btn">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                Watch Now
+                            </a>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 4. Premium CTA Section (FOURTH) -->
+            <div class="channel-cta">
+                <div class="cta-background">
+                    <div class="cta-shape shape-1"></div>
+                    <div class="cta-shape shape-2"></div>
+                </div>
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h3>Join Our <span class="gradient-text">Learning Community</span></h3>
+                        <p>Subscribe to my channel for regular updates on CSE topics, AI research, and programming tutorials. Be part of our growing community of learners and developers.</p>
+                        <div class="cta-features">
+                            <div class="cta-feature">
+                                <i class="fas fa-video" aria-hidden="true"></i>
+                                <span>Weekly New Videos</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-comments" aria-hidden="true"></i>
+                                <span>Active Community</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-download" aria-hidden="true"></i>
+                                <span>Downloadable Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-actions">
+                        <a href="https://youtube.com/@CSEMasteryArman" class="btn btn-youtube-premium" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            Subscribe Now
+                        </a>
+                        <a href="{% url 'youtube' %}" class="btn btn-outline">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-visual">
+                    <div class="youtube-player">
+                        <div class="player-screen">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </div>
+                        <div class="player-controls">
+                            <div class="control"></div>
+                            <div class="control"></div>
+                            <div class="control"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+<!-- YouTube Channel Section End -->
 
-<!-- Quick Links Section -->
-<section class="quick-links">
+<!-- Research Focus Section Start -->
+<section class="research-focus" aria-label="Research Focus Areas">
+    <div class="container">
+        <h2 class="section-title">Research Focus Areas</h2>
+        <div class="focus-grid">
+            
+            <div class="focus-card">
+                <div class="focus-icon">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                </div>
+                <h3>Machine Learning</h3>
+                <p>Linear Regression, XGBoost, Random forest</p>
+            </div>
+
+            <div class="focus-card">
+                <div class="focus-icon">
+                    <i class="fas fa-network-wired" aria-hidden="true"></i>
+                </div>
+                <h3>Deep Learning</h3>
+                <p>CNN, RNN, and Transformer architectures</p>
+            </div>
+            <div class="focus-card">
+                <div class="focus-icon">
+                    <i class="fas fa-robot" aria-hidden="true"></i>
+                </div>
+                <h3>Large Language Models</h3>
+                <p>Fine-tuning LLMs (Llama 3.1, GPT-2) using QLoRA</p>
+            </div>
+            <div class="focus-card">
+                <div class="focus-icon">
+                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                </div>
+                <h3>Agricultural AI</h3>
+                <p>Crop recommendation, Price Forecasting</p>
+            </div>
+            <div class="focus-card">
+                <div class="focus-icon">
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                </div>
+                <h3>Time Series Forecasting</h3>
+                <p>LSTM GRU, ARIMA, SARIMA</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Research Focus Section End -->
+
+<!-- Quick Stats Section Start -->
+<section class="stats-section" aria-label="Statistics">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" data-target="97.42">0</div>
+                <div class="stat-label">Model Accuracy (%)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Research Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="1">0</div>
+                <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="200">0</div>
+                <div class="stat-label">Educational Videos</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Quick Stats Section End -->
+
+<!-- Quick Links Section Start -->
+<section class="quick-links" aria-label="Quick Links">
     <div class="container">
         <h2 class="section-title">Explore My Work</h2>
         <div class="links-grid">
+            <a href="{% url 'about' %}" class="link-card">
                 <div class="link-content">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user-graduate" aria-hidden="true"></i>
                     <h3>About Me</h3>
-                    <p>Learn about my background and research interests</p>
                 </div>
-            
+            </a>
+            <a href="{% url 'projects' %}" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                    <h3>Projects</h3>
+                </div>
+            </a>
+            <a href="{% url 'research' %}" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-flask" aria-hidden="true"></i>
+                    <h3>Research</h3>
+                </div>
+            </a>
+            <a href="{% url 'contact' %}" class="link-card">
+                <div class="link-content">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <h3>Contact</h3>
+                </div>
+            </a>
+            <a href="{% url 'youtube' %}" class="link-card">
+                <div class="link-content">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <h3>Youtube</h3>
+                </div>
+            </a>
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block extra_js %}
-<script src="{% static 'js/index.js' %}"></script>
+<!-- Quick Links Section End -->
 {% endblock %}

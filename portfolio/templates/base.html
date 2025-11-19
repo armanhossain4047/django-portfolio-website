@@ -1,5 +1,5 @@
 {% load static %}
-<!DOCTYPE html>
+<!--suppress ALL -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,13 +7,12 @@
     <title>{% block title %}Arman Hossain - Machine Learning Researcher{% endblock %}</title>
 
     <!-- External Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Your Static CSS File -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Your Static CSS File -->
+ <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}?v=1.0">
 <body data-theme="default">
     <!-- Theme Switcher -->
     <div class="theme-switcher">
@@ -358,5 +357,6 @@
         </div>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
 </body>
 </html> 
