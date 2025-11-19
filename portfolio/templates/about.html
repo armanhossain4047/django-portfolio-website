@@ -1,13 +1,518 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}About - Arman Hossain{% endblock %}
+{% block title %}About - Arman Hossain | ML Researcher{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block content %}
-<!-- Add your about page content here -->
+<!-- About Hero Section -->
 <section class="about-hero">
     <div class="container">
         <h1 class="page-title">About Me</h1>
-        <p class="page-subtitle">Machine Learning Researcher & AI Specialist</p>
+        <p class="page-subtitle">Machine Learning Researcher & AI Enthusiast</p>
     </div>
 </section>
+
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="container">
+        <div class="profile-grid">
+            <div class="profile-image">
+                <div class="image-wrapper">
+                    <img src="{% static 'images/Profile.png' %}" alt="Arman Hossain">
+                    
+                    <!-- Profile Badges -->
+                    <div class="profile-badges">
+                        <div class="profile-badge" data-tooltip="ML Researcher">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="profile-badge" data-tooltip="AI Developer">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="profile-badge" data-tooltip="Content Creator">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Image Decorations -->
+                    <div class="image-decoration">
+                        <div class="decoration-item"></div>
+                        <div class="decoration-item"></div>
+                        <div class="decoration-item"></div>
+                        <div class="decoration-item"></div>
+                    </div>
+                    
+                    <!-- Stats Overlay -->
+                    <div class="image-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-book"></i>
+                            <span>1+ Years Research Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>10+ Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-content">
+                <h2>Arman Hossain</h2>
+                <p class="profile-title">Undergraduate Researcher</p>
+                <div class="profile-info">
+                    <div class="info-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <strong>Institution</strong>
+                            <span>Green University of Bangladesh</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <strong>Degree</strong>
+                            <span>B.Sc in Computer Science & Engineering</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <span>221002624@student.green.edu.bd</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="profile-bio">
+                    I am a passionate undergraduate researcher with hands-on experience in machine learning, 
+                    deep learning, and Large Language Models. My research focuses on agricultural AI applications, 
+                    particularly in precision agriculture using advanced ML techniques and transformer architectures.
+                </p>
+                <div class="profile-actions">
+                    <a href="{% url 'download_cv' %}" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="{% url 'contact' %}" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="education-section">
+    <div class="container">
+        <h2 class="section-title">Education Journey</h2>
+        
+        <div class="timeline-container">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+            
+            <!-- Current Education -->
+            <div class="timeline-item current">
+                <div class="timeline-node">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="content-header">
+                        <div class="education-year">2022 - Present</div>
+                        <div class="education-level">Undergraduate</div>
+                    </div>
+                    <div class="content-body">
+                        <h3>Bachelor of Science in CSE</h3>
+                        <div class="institution-info">
+                            <div class="institution-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="institution-details">
+                                <div class="institution-name">Green University of Bangladesh</div>
+                                <div class="institution-location">Dhaka, Bangladesh</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">CGPA</div>
+                                    <div class="detail-value">3.50 out of 4.00</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Thesis</div>
+                                    <div class="detail-value">Evaluating LLM and ML Models for Fertilizer Recommendation</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Duration</div>
+                                    <div class="detail-value">4 Years Program</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HSC -->
+            <div class="timeline-item">
+                <div class="timeline-node">
+                    <i class="fas fa-school"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="content-header">
+                        <div class="education-year">2018 - 2020</div>
+                        <div class="education-level">Higher Secondary</div>
+                    </div>
+                    <div class="content-body">
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <div class="institution-info">
+                            <div class="institution-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="institution-details">
+                                <div class="institution-name">A. S. M Abdur Rob Govt. College</div>
+                                <div class="institution-location">Ramgati, Lakshmipur, BD</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-atom"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Result</div>
+                                    <div class="detail-value">3.61 out of 5.00</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Group</div>
+                                    <div class="detail-value">Science</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Duration</div>
+                                    <div class="detail-value">2 Years</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SSC -->
+            <div class="timeline-item">
+                <div class="timeline-node">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="content-header">
+                        <div class="education-year">2016 - 2018</div>
+                        <div class="education-level">Secondary</div>
+                    </div>
+                    <div class="content-body">
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <div class="institution-info">
+                            <div class="institution-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="institution-details">
+                                <div class="institution-name">Bibirhat Rashidia High School</div>
+                                <div class="institution-location">Ramgati, Lakshmipur, BD</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-atom"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Result</div>
+                                    <div class="detail-value">3.50 out of 5.00</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Group</div>
+                                    <div class="detail-value">Science</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Duration</div>
+                                    <div class="detail-value">1 Years</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JSC -->
+            <div class="timeline-item">
+                <div class="timeline-node">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="content-header">
+                        <div class="education-year">2015</div>
+                        <div class="education-level">Junior School</div>
+                    </div>
+                    <div class="content-body">
+                        <h3>Junior School Certificate (JSC)</h3>
+                        <div class="institution-info">
+                            <div class="institution-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="institution-details">
+                                <div class="institution-name">Bibirhat Rashidia High School</div>
+                                <div class="institution-location">Ramgati, Lakshmipur, BD</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Result</div>
+                                    <div class="detail-value">GPA 3.11 out of 5.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PSC -->
+            <div class="timeline-item">
+                <div class="timeline-node">
+                    <i class="fas fa-child"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="content-header">
+                        <div class="education-year">2011</div>
+                        <div class="education-level">Primary School</div>
+                    </div>
+                    <div class="content-body">
+                        <h3>Primary School Certificate (PSC)</h3>
+                        <div class="institution-info">
+                            <div class="institution-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="institution-details">
+                                <div class="institution-name">Dhokhin Char Ramiz Govt Primary School</div>
+                                <div class="institution-location">Ramgati, Lakshmipur, BD</div>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Result</div>
+                                    <div class="detail-value">GPA 3.25 out of 5.00</div>
+                                </div>
+                            </div>
+                            <div class="detail-row">
+                                <div class="detail-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">Achievement</div>
+                                    <div class="detail-value">General Scholarship</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achievement-badges">
+                            <div class="achievement-badge">
+                                <i class="fas fa-award"></i>
+                                <span>Scholarship</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technical Skills Section -->
+<section class="skills-section">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming & Libraries</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <span class="skill-name">Python (Scikit-learn, Pandas, NumPy)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PyTorch, Matplotlib, Seaborn</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java, C, JavaScript, SQL, Dart</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> Machine Learning & Deep Learning</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <span class="skill-name">Traditional ML (RF, SVM, Decision Trees)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Deep Learning (CNN, RNN, LSTM)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Transformers & LLMs</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Data Analysis & Tools</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <span class="skill-name">Data Preprocessing & Visualization</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Statistical Analysis</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git, VS Code, LaTeX, Colab</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="88"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> LLM Specialization</h3>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <span class="skill-name">Llama 3.1 8B Instruct</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="87"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Fine-tuning (LoRA/QLoRA, PEFT)</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Prompt Engineering & Evaluation</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Relevant Courses Section -->
+<section class="courses-section">
+    <div class="container">
+        <h2 class="section-title">Relevant Courses</h2>
+        <div class="courses-grid">
+            <div class="course-category">
+                <h3>Core Computer Science</h3>
+                <ul>
+                    <li>Artificial Intelligence</li>
+                    <li>Machine Learning</li>
+                    <li>Data Structures</li>
+                    <li>Algorithms</li>
+                    <li>Database Systems</li>
+                </ul>
+            </div>
+            <div class="course-category">
+                <h3>Advanced Topics</h3>
+                <ul>
+                    <li>Computer Networking</li>
+                    <li>Operating Systems</li>
+                    <li>Object Oriented Programming</li>
+                    <li>Computer Architecture</li>
+                    <li>Digital Logic Design</li>
+                </ul>
+            </div>
+            <div class="course-category">
+                <h3>Mathematics & Theory</h3>
+                <ul>
+                    <li>Statistics</li>
+                    <li>Linear Algebra</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Microprocessors & Microcontrollers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
 {% endblock %}

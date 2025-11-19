@@ -1,0 +1,133 @@
+/* ===== RESEARCH FOCUS SECTION CSS START ===== */
+.research-focus {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Research Section Background */
+.research-focus::before {
+    content: '';
+    position: absolute;
+    top: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(72, 219, 251, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(29, 209, 161, 0.1) 0%, transparent 50%);
+    animation: researchBackground 20s ease-in-out infinite;
+}
+
+[data-theme="light"] .research-focus::before {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(5, 150, 105, 0.05) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .research-focus::before {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(187, 134, 252, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(3, 218, 198, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(207, 102, 121, 0.05) 0%, transparent 50%);
+}
+
+.research-focus .section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.focus-card {
+    background: var(--card-bg);
+    padding: 1rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+[data-theme="light"] .focus-card {
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .focus-card {
+    border: 1px solid rgba(187, 134, 252, 0.15);
+}
+
+.focus-card::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.focus-card:hover::before {
+    opacity: 0.1;
+}
+
+.focus-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.focus-icon {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.focus-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    position: relative;
+    z-index: 2;
+}
+
+.focus-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+    position: relative;
+    z-index: 2;
+}
+/* ===== RESEARCH FOCUS SECTION CSS END ===== */

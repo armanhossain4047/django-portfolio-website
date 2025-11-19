@@ -1,0 +1,888 @@
+/* ===== YOUTUBE SECTION CSS START ===== */
+.youtube-section {
+    position: relative;
+    padding: 6rem 0;
+    background: var(--light-bg);
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+/* Premium Background with Multi-color Gradients */
+.section-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    perspective: 1000px;
+}
+
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.15;
+    animation: float3D 10s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+/* Default Theme - Multi-color */
+[data-theme="default"] .bg-shape.shape-1 {
+    background: var(--gradient-1);
+    width: 400px;
+    height: 400px;
+    top: -200px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+[data-theme="default"] .bg-shape.shape-2 {
+    background: var(--gradient-2);
+    width: 350px;
+    height: 350px;
+    bottom: -175px;
+    left: -100px;
+    animation-delay: 3s;
+}
+
+[data-theme="default"] .bg-shape.shape-3 {
+    background: var(--gradient-3);
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 10%;
+    animation-delay: 6s;
+}
+
+[data-theme="default"] .bg-shape.shape-4 {
+    background: var(--gradient-4);
+    width: 250px;
+    height: 250px;
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+/* Light Theme - Soft Blue Tones */
+[data-theme="light"] .bg-shape {
+    opacity: 0.08;
+}
+
+[data-theme="light"] .bg-shape.shape-1 {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+[data-theme="light"] .bg-shape.shape-2 {
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+}
+
+[data-theme="light"] .bg-shape.shape-3 {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+[data-theme="light"] .bg-shape.shape-4 {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Dark Theme - Purple Accents */
+[data-theme="dark"] .bg-shape {
+    opacity: 0.06;
+}
+
+[data-theme="dark"] .bg-shape.shape-1 {
+    background: linear-gradient(135deg, #bb86fc, #985eff);
+}
+
+[data-theme="dark"] .bg-shape.shape-2 {
+    background: linear-gradient(135deg, #03dac6, #00bda5);
+}
+
+[data-theme="dark"] .bg-shape.shape-3 {
+    background: linear-gradient(135deg, #cf6679, #e91e63);
+}
+
+[data-theme="dark"] .bg-shape.shape-4 {
+    background: linear-gradient(135deg, #6200ee, #3700b3);
+}
+
+/* Floating YouTube Elements */
+.floating-play-btn, .floating-subscribers {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    animation: float3D 8s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    transform-style: preserve-3d;
+}
+
+.floating-play-btn {
+    top: 20%;
+    left: 5%;
+    animation-delay: 1s;
+    background: var(--gradient-1);
+    color: #000000;
+}
+
+[data-theme="light"] .floating-play-btn {
+    color: #FFFFFF;
+}
+
+.floating-subscribers {
+    bottom: 25%;
+    right: 8%;
+    animation-delay: 4s;
+    background: var(--gradient-2);
+    color: #000000;
+}
+
+[data-theme="light"] .floating-subscribers {
+    color: #FFFFFF;
+}
+
+/* Enhanced Container */
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Premium Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.youtube-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.youtube-icon {
+    font-size: 4rem;
+    color: #ff0000;
+    position: relative;
+    z-index: 2;
+    animation: bounce 3s infinite;
+}
+
+.icon-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: #ff0000;
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: pulse 2s infinite;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    margin-top: 20;
+    margin-bottom: 10px;
+}
+
+.title-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+}
+
+.title-underline {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+    transform: scaleX(0);
+    animation: underlineExpand 1.5s ease-out 0.5s forwards;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.header-stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Enhanced Stats Cards with Mouse Glow */
+.youtube-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 2.5rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+[data-theme="light"] .stat-card {
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .stat-card {
+    border: 1px solid rgba(187, 134, 252, 0.15);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.stat-card:hover::before {
+    opacity: 0.1;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+}
+
+.stat-icon {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 2;
+}
+
+.icon-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: rotate 10s linear infinite;
+}
+
+.stat-content h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.stat-progress {
+    margin-top: 1.2rem;
+}
+
+.progress-bar {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+[data-theme="light"] .progress-bar {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 3px;
+    width: 0;
+    animation: progressFill 2s ease-out forwards;
+}
+
+.stat-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stat-card:hover .stat-glow {
+    left: 0;
+    opacity: 0.1;
+}
+
+/* Enhanced YouTube Content */
+.youtube-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.channel-description {
+    text-align: center;
+}
+
+.description-card {
+    background: var(--card-bg);
+    padding: 2rem 2rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    max-width: 90%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="light"] .description-card {
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow);
+}
+
+.description-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.highlight-text {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.description-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.channel-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.feature i {
+    color: var(--success-color);
+    font-size: 1rem;
+}
+/* Enhanced Playlists Showcase with Mouse Glow */
+.playlists-showcase {
+    position: relative;
+}
+
+.showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.showcase-header h3 {
+    font-size: 2rem;
+    color: var(--text-color);
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.view-all a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.view-all a:hover {
+    gap: 0.8rem;
+    color: var(--accent-color);
+}
+
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+}
+
+.playlist-card {
+    background: var(--card-bg);
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* FIX — card নিজে clickable নয় */
+    cursor: default;
+
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
+
+[data-theme="light"] .playlist-card {
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .playlist-card {
+    border: 1px solid rgba(187, 134, 252, 0.15);
+}
+
+.playlist-card::before {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    /* FIX: লিঙ্ককে ব্লক না করে */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.playlist-card:hover::before {
+    opacity: 0.1;
+}
+
+.playlist-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+}
+
+.playlist-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.playlist-badge {
+    background: var(--gradient-1);
+    color: #000000;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+[data-theme="light"] .playlist-badge {
+    color: #FFFFFF;
+}
+
+.playlist-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.playlist-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.playlist-progress {
+    margin-bottom: 1.5rem;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.progress-track {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+[data-theme="light"] .progress-track {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 3px;
+    width: 0;
+    animation: progressFill 1.5s ease-out forwards;
+}
+
+.playlist-actions {
+    text-align: center;
+}
+
+.watch-btn {
+    background: var(--gradient-1);
+    color: #000000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    position: relative;
+    z-index: 5;  /* FIX — সব glow layer এর উপরে */
+}
+
+[data-theme="light"] .watch-btn {
+    color: #FFFFFF;
+}
+
+.watch-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Glow layer — FIXED */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* FIX: ক্লিক ব্লক করবে না */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.playlist-card:hover .card-glow {
+    left: 0;
+    opacity: 0.1;
+}
+
+
+.channel-cta {
+    background: var(--gradient-1);
+    border-radius: 30px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.cta-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float3D 8s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+.cta-shape.shape-1 {
+    width: 150px;
+    height: 150px;
+    top: -40px;
+    right: -40px;
+}
+
+.cta-shape.shape-2 {
+    width: 120px;
+    height: 120px;
+    bottom: -25px;
+    left: -25px;
+    animation-delay: 2s;
+}
+
+.cta-content {
+    flex: 1;
+    color: #000000;
+    z-index: 2;
+    position: relative;
+}
+
+[data-theme="light"] .cta-content {
+    color: #FFFFFF;
+}
+
+.cta-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #000000, #333333);
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .gradient-text {
+    background: linear-gradient(45deg, #ffffff, #e0e0e0);
+    -webkit-text-fill-color: transparent;
+}
+
+
+.cta-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.cta-features {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.cta-feature i {
+    font-size: 1rem;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-youtube-premium {
+    background: #000000;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    font-size: 0.9rem;
+}
+
+[data-theme="light"] .btn-youtube-premium {
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn-youtube-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    border-color: #ffffff;
+}
+
+[data-theme="light"] .btn-youtube-premium:hover {
+    border-color: #000000;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #000000;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: var(--transition);
+    border: 2px solid #000000;
+    font-size: 0.9rem;
+}
+
+[data-theme="light"] .btn-outline {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+[data-theme="light"] .btn-outline:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.cta-visual {
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.youtube-player {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-screen {
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.2rem;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.control {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+/* ===== YOUTUBE SECTION CSS END ===== */

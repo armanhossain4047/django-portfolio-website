@@ -1,0 +1,95 @@
+/* ===== PROFILE CONTENT SECTION ===== */
+.profile-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .profile-title {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-info {
+    margin-bottom: 2rem;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+  }
+  
+  [data-theme="light"] .info-item {
+    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+  }
+  
+  .info-item:hover {
+    transform: translateX(10px);
+    border-color: var(--primary-color);
+  }
+  
+  .info-item i {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 1.1rem;
+    transition: var(--transition);
+  }
+  
+  [data-theme="light"] .info-item i {
+    color: #FFFFFF;
+  }
+  
+  .info-item:hover i {
+    transform: scale(1.1) rotate(10deg);
+    background: var(--gradient-2);
+  }
+  
+  .info-item strong {
+    display: block;
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  
+  .info-item span {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+  
+  .profile-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+  }
+  
+  [data-theme="light"] .profile-bio {
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+  
+  .profile-bio:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }

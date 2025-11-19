@@ -1,0 +1,392 @@
+
+
+
+
+
+
+
+
+/* ===== ENHANCED ANIMATIONS START ===== */
+@keyframes float3D {
+    0%, 100% {
+        transform: translateY(0px) translateX(0) rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+        transform: translateY(-15px) translateX(8px) rotateX(5deg) rotateY(5deg);
+    }
+    50% {
+        transform: translateY(-8px) translateX(-4px) rotateX(-3deg) rotateY(-3deg);
+    }
+    75% {
+        transform: translateY(-12px) translateX(-8px) rotateX(2deg) rotateY(2deg);
+    }
+}
+
+@keyframes patternMove3D {
+    0% {
+        background-position: 0 0, 0 0;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    25% {
+        background-position: 20px 20px, 12px 12px;
+        transform: rotateX(1deg) rotateY(1deg);
+    }
+    50% {
+        background-position: 40px 40px, 24px 24px;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    75% {
+        background-position: 20px 20px, 12px 12px;
+        transform: rotateX(-1deg) rotateY(-1deg);
+    }
+    100% {
+        background-position: 0 0, 0 0;
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+}
+
+@keyframes underlineExpand {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes progressFill {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--progress-width, 100%);
+    }
+}
+
+@keyframes researchBackground {
+    0%, 100% {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+    25% {
+        background-position: 100% 0%, 0% 100%, 50% 50%;
+    }
+    50% {
+        background-position: 100% 100%, 0% 0%, 50% 50%;
+    }
+    75% {
+        background-position: 0% 100%, 100% 0%, 50% 50%;
+    }
+}
+
+@keyframes statsShine {
+    0%, 100% {
+        background-position: -100% -100%;
+    }
+    50% {
+        background-position: 200% 200%;
+    }
+}
+
+@keyframes linksBackground {
+    0%, 100% {
+        background-position: 0% 0%, 100% 100%;
+    }
+    50% {
+        background-position: 100% 0%, 0% 100%;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        border-color: var(--accent-color);
+    }
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes glowRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-8px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-4px) translateX(-50%);
+    }
+}
+/* ===== ENHANCED ANIMATIONS END ===== */
+
+/* ===== RESPONSIVE DESIGN START ===== */
+@media (max-width: 1200px) {
+    .channel-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+    
+    .cta-features {
+        justify-content: center;
+    }
+    
+    .cta-actions {
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .header-stats {
+        gap: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .youtube-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .playlists-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .channel-features {
+        gap: 1.5rem;
+    }
+    
+    .research-focus .section-title,
+    .quick-links .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .youtube-section,
+    .research-focus,
+    .quick-links {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .youtube-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-stats {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    
+    .description-card {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .cta-text h3 {
+        font-size: 1.8rem;
+    }
+    
+    .youtube-player {
+        width: 220px;
+    }
+    
+    .focus-grid,
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .youtube-icon {
+        font-size: 3rem;
+    }
+    
+    .description-card {
+        padding: 2rem 1rem;
+    }
+    
+    .channel-cta {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .btn-youtube-premium,
+    .btn-outline {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .image-container {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .youtube-hero-stats {
+        gap: 1rem;
+    }
+    
+    .youtube-stat-number {
+        font-size: 1.3rem;
+    }
+    
+    .floating-element {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .image-container {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .youtube-player {
+        width: 200px;
+    }
+}
+/* ===== RESPONSIVE DESIGN END ===== */
+
+/* Fix for YouTube section spacing */
+.youtube-section {
+    padding: 3rem 0 !important; /* আগে 6rem ছিল */
+}
+
+.section-header {
+    margin-bottom: 1rem !important; /* আগে 1.5rem ছিল */
+}
+
+.section-title {
+    margin-top: 0 !important; /* আগে 20 ছিল */
+    margin-bottom: 8px !important; /* আগে 10px ছিল */
+}
